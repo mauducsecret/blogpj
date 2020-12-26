@@ -8,7 +8,8 @@ const initialState = {
   lastUpdate: 0,
   light: false,
   count: 0,
-  isLogin: false
+  isLogin: false,
+  countriesList: null
 }
 
 const reducer = (state = initialState, action) => {
