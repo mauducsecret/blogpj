@@ -16,7 +16,7 @@ const HomPage = () => {
             <Row>
                 <Col>
                     <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="https://www.w3schools.com/w3css/img_forest.jpg" width="200px" height="200px"/>
+                        <Card.Img variant="top" src="https://www.w3schools.com/w3css/img_forest.jpg" width="200px" height="200px" />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>

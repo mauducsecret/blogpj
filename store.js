@@ -8,6 +8,7 @@ const initialState = {
   lastUpdate: 0,
   light: false,
   count: 0,
+  isLogin: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -32,6 +33,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         count: initialState.count,
+      }
+    case 'LOGINSUCESS':
+      return {
+        ...state,
+        isLogin: true
+      }
+    case 'LOGOUT':
+      return {
+        ...state,
+        isLogin: false
       }
     default:
       return state
