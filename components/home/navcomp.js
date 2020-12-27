@@ -15,12 +15,12 @@ const Navcomp = () => {
 
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand href="#home">Blog Money</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Link href="/">Home</Link>
-          <Nav.Link href="#link">Link</Nav.Link>
+          <Link href="/" className="ml-3">Home</Link>
+          <Link href="#link" className="ml-3">Chat</Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />

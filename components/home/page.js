@@ -24,13 +24,15 @@ const HomPage = () => {
 
     return (
         <Container>
+            <br />
             <Row>
                 <Col>
-                    <h1>Giup ban tiet kiem tien</h1>
+                    <h1>Bai viet</h1>
                 </Col>
             </Row>
             <Row>
                 {blogList && blogList != undefined && blogList.map((post) => (
+                <Row className="mb-3 ml-3">
                 <Col>
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={'http://localhost:3000/upload/' + post.filename} width="200px" height="200px" />
@@ -39,11 +41,11 @@ const HomPage = () => {
                             <Card.Text>
                                 <div  dangerouslySetInnerHTML={{__html: post.content}} />
                              </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
+                            <Button variant="primary">View Detail</Button>
                         </Card.Body>
                     </Card>
-
                 </Col>
+                </Row>
                 ))}
             </Row>
         </Container>
