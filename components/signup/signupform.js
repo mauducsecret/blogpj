@@ -24,11 +24,11 @@ const SignUpForm = () => {
         const data = await fetch("http://localhost:3000/api/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 firstname: firstName,
-                lastname:  lastName,
-                email:email,
-                password:password,
+                lastname: lastName,
+                email: email,
+                password: password,
                 addressOnce: addressOnce,
                 addressTwo: addressTwo,
                 city: city,
@@ -45,7 +45,7 @@ const SignUpForm = () => {
 
     const [countriesList, setCountriesList] = useState([]);
 
-    const getCountriesList = async() => {
+    const getCountriesList = async () => {
         // Call an external API endpoint to get posts.
         // You can use any data fetching library
         const res = await fetch('http://localhost:3000/api/countrieslist');
@@ -56,14 +56,14 @@ const SignUpForm = () => {
         setCountriesList(result);
         return true;
     }
-    
+
     getCountriesList();
 
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group controlId="formFirstName">
                 <Form.Label>First Name</Form.Label>
-                <Form.Control  ref={register({ required: true, maxLength: 30 })} name="firstname" placeholder="First Name" />
+                <Form.Control ref={register({ required: true, maxLength: 30 })} name="firstname" placeholder="First Name" />
                 <Form.Text className="text-muted">
                     {errors.firstname &&
                         // if errors then display alert
@@ -185,7 +185,7 @@ const SignUpForm = () => {
 
                 <Form.Group as={Col} controlId="formGridZip">
                     <Form.Label>Zip</Form.Label>
-                    <Form.Control name="zipcode" ref={register({ required: true, maxLength: 11 })}/>
+                    <Form.Control name="zipcode" ref={register({ required: true, maxLength: 11 })} />
                     <Form.Text className="text-muted">
                         {errors.zipcode &&
                             // if errors then display alert
@@ -199,16 +199,16 @@ const SignUpForm = () => {
             </Form.Row>
 
             <Form.Group id="formGridCheckbox">
-                <Form.Check type="checkbox" name="termcondition" label="Check me out" ref={register({ required: true})} />
+                <Form.Check type="checkbox" name="termcondition" label="Check me out" ref={register({ required: true })} />
                 <Form.Text className="text-muted">
-                        {errors.termcondition &&
-                            // if errors then display alert
-                            <Alert variant="danger">
-                                {errors.termcondition?.type === "required" && <p>Term condition is required</p>}
-                                {errors.termcondition?.type === "maxLength" && <p>Max length of Term condition is 11 characters!</p>}
-                            </Alert>
-                        }
-                    </Form.Text>
+                    {errors.termcondition &&
+                        // if errors then display alert
+                        <Alert variant="danger">
+                            {errors.termcondition?.type === "required" && <p>Term condition is required</p>}
+                            {errors.termcondition?.type === "maxLength" && <p>Max length of Term condition is 11 characters!</p>}
+                        </Alert>
+                    }
+                </Form.Text>
             </Form.Group>
 
             <Button variant="primary" type="submit">
