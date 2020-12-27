@@ -44,14 +44,13 @@ const Createblogform = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                if (data == true) {
+                    alert('Create Blog Successfull');
+                }
             })
             .catch(error => {
                 console.error(error);
             });
-        console.log("===================Data Return Start===============");
-        console.log(dataReturn);
-        console.log("===================Data Return End===============");
     }
 
     const onEditorStateChange = editorState => {
