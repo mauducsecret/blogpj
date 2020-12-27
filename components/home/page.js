@@ -7,20 +7,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const HomPage = () => {
-    const [countriesList, setCountriesList] = useState([]);
+    const [blogList, setBlogList] = useState([]);
 
-    const getCountriesList = async () => {
+    const getBlogList = async () => {
         // Call an external API endpoint to get posts.
         // You can use any data fetching library
         const res = await fetch('http://localhost:3000/api/bloglist');
         const posts = await res.json();
         // By returning { props: posts }, the Blog component
         // will receive `posts` as a prop at build time
-        setCountriesList(posts);
+        setBlogList(posts);
         return true;
     }
 
-    getCountriesList();
+    getBlogList();
 
     return (
         <Container>
@@ -30,7 +30,7 @@ const HomPage = () => {
                 </Col>
             </Row>
             <Row>
-                {countriesList && countriesList != undefined && countriesList.map((post) => (
+                {blogList && blogList != undefined && blogList.map((post) => (
                 <Col>
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={'http://localhost:3000/upload/' + post.filename} width="200px" height="200px" />
